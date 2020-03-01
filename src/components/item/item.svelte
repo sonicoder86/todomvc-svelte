@@ -1,0 +1,51 @@
+<script>
+  import { createEventDispatcher } from 'svelte';
+  const dispatch = createEventDispatcher();
+
+  export let todo;
+  let editing = false;
+  let name = todo.name;
+
+  const handleEdit = () => editing = true;
+
+  const handleCompleted = () => {
+    dispatch('update', {
+      id: todo.id,
+      completed: !todo.completed
+    });
+  };
+
+  const handleRemove = () => dispatch('remove', todo.id);
+
+  const handleChange = event => name = event.target.value;
+
+  const handleBlur = () => {
+    dispatch('update', {
+      id: todo.id,
+      name
+    });
+    editing = false;
+  };
+</script>
+
+<li class:editing={editing} class:completed={todo.completed}>
+  <div class="view">
+    <input
+      class="toggle"
+      type="checkbox"
+      checked={todo.completed}
+      on:change={handleCompleted}
+    />
+    <label on:dblclick={handleEdit}>{todo.name}</label>
+    <button
+      class="destroy"
+      on:click={handleRemove}
+    />
+  </div>
+    <input
+      class="edit"
+      value={name}
+      on:input={handleChange}
+      on:blur={handleBlur}
+    />
+</li>

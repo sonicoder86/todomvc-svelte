@@ -1,0 +1,24 @@
+{
+  "name": "svelte-app",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "rollup -c",
+    "start": "rollup -c -w"
+  },
+  "dependencies": {
+    "svelte": "^3.0.0",
+    "todomvc-app-css": "^2.3.0",
+    "uuid": "^3.4.0"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^11.0.0",
+    "@rollup/plugin-node-resolve": "^7.0.0",
+    "rollup": "^1.20.0",
+    "rollup-plugin-css-only": "^2.0.0",
+    "rollup-plugin-livereload": "^1.0.0",
+    "rollup-plugin-postcss": "^2.1.1",
+    "rollup-plugin-serve": "^1.0.1",
+    "rollup-plugin-svelte": "^5.0.3",
+    "rollup-plugin-terser": "^5.1.2"
+  }
+}
