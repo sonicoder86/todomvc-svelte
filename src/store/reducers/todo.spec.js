@@ -1,5 +1,5 @@
 import { todosReducer } from './todo';
-import { onCreate, onLoad, onRemove, onUpdate } from '../actions';
+import { onCreate, onLoad, onRemove, onUpdate } from '../actions/todo';
 
 describe('todosMutations', () => {
   it('should set list of items on load', () => {

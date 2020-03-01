@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "scripts": {
     "build": "rollup -c",
-    "start": "rollup -c -w"
+    "start": "rollup -c -w",
+    "test": "jest src"
   },
   "dependencies": {
     "svelte": "^3.0.0",
@@ -11,14 +12,37 @@
     "uuid": "^3.4.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.8.6",
+    "@babel/preset-env": "^7.8.6",
     "@rollup/plugin-commonjs": "^11.0.0",
     "@rollup/plugin-node-resolve": "^7.0.0",
+    "@testing-library/jest-dom": "^5.1.0",
+    "@testing-library/svelte": "^1.11.0",
+    "babel-jest": "^25.1.0",
+    "jest": "^25.1.0",
+    "jest-extended": "^0.11.5",
     "rollup": "^1.20.0",
-    "rollup-plugin-css-only": "^2.0.0",
     "rollup-plugin-livereload": "^1.0.0",
     "rollup-plugin-postcss": "^2.1.1",
     "rollup-plugin-serve": "^1.0.1",
     "rollup-plugin-svelte": "^5.0.3",
-    "rollup-plugin-terser": "^5.1.2"
+    "rollup-plugin-terser": "^5.1.2",
+    "svelte-jester": "^1.0.4"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.js$": "babel-jest",
+      "^.+\\.svelte$": "svelte-jester"
+    },
+    "moduleFileExtensions": [
+      "js",
+      "svelte"
+    ],
+    "moduleDirectories": [
+      "node_modules"
+    ],
+    "setupFilesAfterEnv": [
+      "<rootDir>src/setupTests.js"
+    ]
   }
 }
