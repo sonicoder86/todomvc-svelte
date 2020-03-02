@@ -15,22 +15,26 @@ function reduce(reducer, initial) {
   return { state, subscribe, dispatch };
 }
 
-const todos = reduce(todosReducer, []);
-const filter = reduce(filterReducer, FILTERS.all);
+export const createStore = (state = { todos: [], filter: FILTERS.all }) => {
+  const todos = reduce(todosReducer, state.todos);
+  const filter = reduce(filterReducer, state.filter);
 
-export const store = {
-  state: {
-    todos: todos.state,
-    filter: filter.state
-  },
-  dispatch(action) {
-    todos.dispatch(action);
-    filter.dispatch(action);
-  },
-  selectors: {
-    itemsLeft: derived(todos, todos => selectNotCompleted(todos).length),
-    completedCount: derived(todos, todos => selectCompleted(todos).length),
-    visibleTodos: derived([todos, filter], ([todos, filter]) => selectVisible(todos, filter)),
-    areAllCompleted: derived(todos, todos => todos.length && todos.every(todo => todo.completed))
-  }
+  return {
+    state: {
+      todos: todos.state,
+      filter: filter.state
+    },
+    dispatch(action) {
+      todos.dispatch(action);
+      filter.dispatch(action);
+    },
+    selectors: {
+      itemsLeft: derived(todos, todos => selectNotCompleted(todos).length),
+      completedCount: derived(todos, todos => selectCompleted(todos).length),
+      visibleTodos: derived([todos, filter], ([todos, filter]) => selectVisible(todos, filter)),
+      areAllCompleted: derived(todos, todos => todos.length && todos.every(todo => todo.completed))
+    }
+  };
 };
+
+export const store = createStore();

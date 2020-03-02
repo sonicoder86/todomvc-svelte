@@ -28,7 +28,7 @@
   };
 </script>
 
-<li class:editing={editing} class:completed={todo.completed}>
+<li class:editing={editing} class:completed={todo.completed} data-testid="todo-item">
   <div class="view">
     <input
       class="toggle"
@@ -36,10 +36,11 @@
       checked={todo.completed}
       on:change={handleCompleted}
     />
-    <label on:dblclick={handleEdit}>{todo.name}</label>
+    <label on:dblclick={handleEdit} data-testid="todo-name">{todo.name}</label>
     <button
       class="destroy"
       on:click={handleRemove}
+      data-testid="todo-remove"
     />
   </div>
     <input
