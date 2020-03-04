@@ -1,7 +1,9 @@
 <script>
-  import { store } from '../../store';
+  import { getContext } from 'svelte';
   import { onCompleteAll, onRemove, onUpdate } from '../../store/actions/todo';
   import Item from '../item/item.svelte';
+
+  const store = getContext('store');
 
   const completeAll = () => store.dispatch(onCompleteAll(name));
 

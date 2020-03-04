@@ -1,8 +1,9 @@
 <script>
-  import { store } from '../../store';
+  import { getContext } from 'svelte';
   import { onCreate } from '../../store/actions/todo';
-  const ENTER_KEY = 'Enter';
 
+  const store = getContext('store');
+  const ENTER_KEY = 'Enter';
   let name = '';
 
   const handleChange = event => name = event.target.value;
@@ -24,5 +25,6 @@
     value="{name}"
     on:input="{handleChange}"
     on:keyup="{handleSubmit}"
+    data-testid="todo-create"
   />
 </header>

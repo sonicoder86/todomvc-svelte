@@ -36,5 +36,3 @@ export const createStore = (state = { todos: [], filter: FILTERS.all }) => {
     }
   };
 };
-
-export const store = createStore();

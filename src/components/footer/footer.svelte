@@ -1,10 +1,11 @@
 <script>
+  import { getContext } from 'svelte';
   import { derived } from 'svelte/store';
   import { FILTERS } from '../../constants/filter';
-  import { store } from '../../store';
   import { onFilterSelect } from '../../store/actions/filter';
   import { onClearCompleted } from '../../store/actions/todo';
 
+  const store = getContext('store');
   const filterTitles = [
     { key: FILTERS.all, value: 'All' },
     { key: FILTERS.active, value: 'Active' },
