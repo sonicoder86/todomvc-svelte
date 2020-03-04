@@ -14,6 +14,4 @@ The well-known TodoApp built with Svelte and Store in a well-structured way.
 
 ## Component architecture
 
-![Architecture](./images/architecture.png)
-
 Application is compatible with [Svelte devtools](https://chrome.google.com/webstore/detail/svelte-devtools/ckolcbmkjpjmangdbmnkpjigpkddpogn)
