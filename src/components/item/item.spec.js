@@ -18,13 +18,16 @@ describe('Item', () => {
     expect(getByTestId('todo-item')).toHaveClass('completed');
   });
 
-  it.only('should notify about delete button', () => {
+  it('should notify about delete button', () => {
     const todo = { id: 'e2bb892a-844a-47fb-a2b3-47f491af9d88', name: 'Demo', completed: false };
 
-    const { getByTestId, container } = render(Item, { todo });
+    const { getByTestId, component } = render(Item, { todo });
 
-    // todo find a way to catch the event
-    // container.addEventListener('remove', console.log)
+    let removeId;
+    component.$on('remove', event => removeId = event.detail);
+
     fireEvent.click(getByTestId('todo-remove'));
+
+    expect(removeId).toEqual(todo.id);
   });
 });
