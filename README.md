@@ -2,8 +2,6 @@
 
 The well-known TodoApp built with Svelte and Store in a well-structured way.
 
-[Edit and try it out online](https://codesandbox.io/s/github/blacksonic/todoapp-svelte)
-
 ## Concepts and tools covered
 
 - [Components and Props](https://svelte.dev/tutorial/declaring-props)
