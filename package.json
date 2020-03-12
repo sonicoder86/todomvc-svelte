@@ -36,7 +36,7 @@
   },
   "engines": {
     "node": "12"
-  }
+  },
   "jest": {
     "transform": {
       "^.+\\.js$": "babel-jest",
