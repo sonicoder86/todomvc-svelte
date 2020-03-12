@@ -34,6 +34,9 @@
     "start-server-and-test": "^1.10.8",
     "svelte-jester": "^1.0.4"
   },
+  "engines": {
+    "node": "12"
+  }
   "jest": {
     "transform": {
       "^.+\\.js$": "babel-jest",
