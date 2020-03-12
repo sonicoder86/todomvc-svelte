@@ -1,10 +1,10 @@
 {
-  "name": "svelte-app",
+  "name": "todomvc-svelte",
   "version": "1.0.0",
   "scripts": {
     "build": "rollup -c",
     "start": "rollup -c -w",
-    "test": "npm run test:unit",
+    "test": "npm run test:unit && npm run test:e2e",
     "test:unit": "jest src",
     "test:e2e": "start-server-and-test start http://localhost:9500 cypress",
     "cypress": "cypress run"
@@ -12,7 +12,7 @@
   "dependencies": {
     "svelte": "^3.0.0",
     "todomvc-app-css": "^2.3.0",
-    "uuid": "^3.4.0"
+    "uuid": "^7.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.8.6",
@@ -25,12 +25,12 @@
     "cypress": "^4.0.1",
     "jest": "^25.1.0",
     "jest-extended": "^0.11.5",
-    "rollup": "^2.0.2",
+    "rollup": "^2.0.5",
     "rollup-plugin-livereload": "^1.0.0",
-    "rollup-plugin-postcss": "^2.4.0",
+    "rollup-plugin-postcss": "^2.4.1",
     "rollup-plugin-serve": "^1.0.1",
     "rollup-plugin-svelte": "^5.0.3",
-    "rollup-plugin-terser": "^5.1.2",
+    "rollup-plugin-terser": "^5.3.0",
     "start-server-and-test": "^1.10.8",
     "svelte-jester": "^1.0.4"
   },
