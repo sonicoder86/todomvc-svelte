@@ -1,6 +1,6 @@
 # TodoMVC built with Svelte and Store
 
-The well-known TodoApp built with Svelte and Store in a well-structured way.
+The well-known TodoMVC built with Svelte and Store in a structured and testable way.
 
 ![TodoMVC Svelte](./images/screenshot.png "TodoMVC Svelte")
 
