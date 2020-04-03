@@ -1,5 +1,7 @@
 # TodoMVC built with Svelte and Store
 
+[![Build Status](https://travis-ci.org/blacksonic/todomvc-svelte.svg?branch=master)](https://travis-ci.org/blacksonic/todomvc-svelte)
+
 The well-known TodoMVC built with Svelte and Store in a structured and testable way.
 
 ![TodoMVC Svelte](./images/screenshot.png "TodoMVC Svelte")
