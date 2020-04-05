@@ -17,3 +17,14 @@ The well-known TodoMVC built with Svelte and Store in a structured and testable 
 ## Component architecture
 
 Application is compatible with [Svelte devtools](https://chrome.google.com/webstore/detail/svelte-devtools/ckolcbmkjpjmangdbmnkpjigpkddpogn)
+
+## Series
+
+This implementation is part of a series where the same application was implemented with the same architecture.
+
+- [Vue](https://github.com/blacksonic/todomvc-vue)
+- [Vue Composition API](https://github.com/blacksonic/todomvc-vue-composition-api)
+- [Angular](https://github.com/blacksonic/todomvc-angular)
+- [React](https://github.com/blacksonic/todomvc-react)
+- [React Hooks](https://github.com/blacksonic/todomvc-react-hooks)
+- [Svelte](https://github.com/blacksonic/todomvc-svelte)
