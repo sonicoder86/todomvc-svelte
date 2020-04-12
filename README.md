@@ -1,6 +1,7 @@
 # TodoMVC built with Svelte and Store
 
 [![Build Status](https://travis-ci.com/blacksonic/todomvc-svelte.svg?branch=master)](https://travis-ci.com/blacksonic/todomvc-svelte)
+[![Dependencies Status](https://david-dm.org/blacksonic/todomvc-svelte/status.svg)](https://david-dm.org/blacksonic/todomvc-svelte)
 
 The well-known TodoMVC built with Svelte and Store in a structured and testable way.
 
@@ -13,6 +14,18 @@ The well-known TodoMVC built with Svelte and Store in a structured and testable 
 - [Store](https://svelte.dev/tutorial/writable-stores)
 - [Unit Testing](https://github.com/testing-library/svelte-testing-library)
 - [E2E Testing](https://www.cypress.io/)
+
+## Usage
+
+After installing the dependencies the following NPM scripts become available:
+
+- `start`: starts the application in development mode on [http://localhost:9500](http://localhost:9500)
+- `build`: bundles the application for production into the `public` folder
+- `test`: runs unit and E2E tests
+- `test:unit`: runs unit tests with [Jest](https://jestjs.io/) in the `src` folder suffixed with `*.spec.js`
+- `test:e2e`: runs E2E tests with [Cypress](https://www.cypress.io/) in the `tests/e2e` folder suffixed with `*.spec.js`
+- `format`: formats the code with [Prettier](https://prettier.io/) within the `src` folder
+- `lint`: lint files with [ESLint](https://eslint.org/) based on [Airbnb's styleguide](https://github.com/airbnb/javascript) and the Prettier config
 
 ## Component architecture
 
