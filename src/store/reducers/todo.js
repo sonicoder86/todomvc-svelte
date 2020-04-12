@@ -9,16 +9,12 @@ export const todosReducer = (state = [], action) => {
     case ACTION_TYPES.create:
       return [...state, { id: uuidv4(), name: action.name, completed: false }];
     case ACTION_TYPES.update:
-      return state.map(
-        todo => todo.id === action.values.id ? { ...todo, ...action.values } : todo
-      );
+      return state.map(todo => (todo.id === action.values.id ? { ...todo, ...action.values } : todo));
     case ACTION_TYPES.remove:
       return state.filter(todo => todo.id !== action.id);
     case ACTION_TYPES.completeAll:
       const areAllCompleted = state.length && selectCompleted(state).length === state.length;
-      return state.map(
-        todo => ({ ...todo, ...{ completed: !areAllCompleted } })
-      );
+      return state.map(todo => ({ ...todo, ...{ completed: !areAllCompleted } }));
     case ACTION_TYPES.clearCompleted:
       return selectNotCompleted(state);
     default:

@@ -4,18 +4,15 @@ import { FILTERS } from '../../constants/filter';
 
 describe('Header', () => {
   it('should add new element to store', () => {
-    const { getByTestId, component } = render(
-      HeaderTest,
-      {
-        state: {
-          todos: [],
-          filter: FILTERS.all
-        }
+    const { getByTestId, component } = render(HeaderTest, {
+      state: {
+        todos: [],
+        filter: FILTERS.all
       }
-    );
+    });
 
     let todos;
-    component.$on('todos', event => todos = event.detail);
+    component.$on('todos', event => (todos = event.detail));
 
     const input = getByTestId('todo-create');
     input.value = 'Demo';

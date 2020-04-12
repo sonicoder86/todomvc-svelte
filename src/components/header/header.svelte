@@ -6,7 +6,7 @@
   const ENTER_KEY = 'Enter';
   let name = '';
 
-  const handleChange = event => name = event.target.value;
+  const handleChange = event => (name = event.target.value);
 
   const handleSubmit = event => {
     if (event.key !== ENTER_KEY) {
@@ -17,14 +17,14 @@
     name = '';
   };
 </script>
+
 <header class="header">
   <h1>todos</h1>
   <input
     class="new-todo"
     placeholder="What needs to be done?"
-    value="{name}"
-    on:input="{handleChange}"
-    on:keyup="{handleSubmit}"
-    data-testid="todo-create"
-  />
+    value={name}
+    on:input={handleChange}
+    on:keyup={handleSubmit}
+    data-testid="todo-create" />
 </header>

@@ -14,28 +14,27 @@
 
   const { filter } = store.state;
   const { itemsLeft, completedCount } = store.selectors;
-  const itemText = derived(itemsLeft, itemCount => itemCount === 1 ? 'item' : 'items');
+  const itemText = derived(itemsLeft, itemCount => (itemCount === 1 ? 'item' : 'items'));
 
   const filterSelect = filter => store.dispatch(onFilterSelect(filter));
   const clearCompleted = () => store.dispatch(onClearCompleted());
 </script>
 
 <footer class="footer">
-  <span class="todo-count"><strong>{$itemsLeft}</strong> <span>{$itemText} left</span></span>
+  <span class="todo-count">
+    <strong>{$itemsLeft}</strong>
+    <span>{$itemText} left</span>
+  </span>
   <ul class="filters">
     {#each filterTitles as filterTitle}
       <li>
-        <a
-          href="#"
-          class:selected={filterTitle.key === $filter}
-          on:click={() => filterSelect(filterTitle.key)}
-        >
+        <a href="#" class:selected={filterTitle.key === $filter} on:click={() => filterSelect(filterTitle.key)}>
           {filterTitle.value}
         </a>
       </li>
     {/each}
   </ul>
-  {#if $completedCount }
+  {#if $completedCount}
     <button class="clear-completed" on:click={clearCompleted}>Clear completed</button>
   {/if}
 </footer>

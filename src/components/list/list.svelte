@@ -14,17 +14,14 @@
   const { visibleTodos } = store.selectors;
   const { areAllCompleted } = store.selectors;
 </script>
+
 <section class="main">
   <input id="toggle-all" class="toggle-all" type="checkbox" checked={$areAllCompleted} readonly />
-  <label for="toggle-all" on:click={completeAll}></label>
+  <label for="toggle-all" on:click={completeAll} />
 
   <ul class="todo-list">
     {#each $visibleTodos as todo}
-      <Item
-        todo={todo}
-        on:remove={remove}
-        on:update={update}
-      />
+      <Item {todo} on:remove={remove} on:update={update} />
     {/each}
   </ul>
 </section>

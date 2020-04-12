@@ -7,6 +7,7 @@
   },
   "scripts": {
     "build": "rollup -c",
+    "format": "prettier --write 'src/**/*.{js,svelte}'",
     "start": "rollup -c -w",
     "test": "npm run test:unit && npm run test:e2e",
     "test:unit": "jest src",
@@ -29,6 +30,8 @@
     "cypress": "^4.3.0",
     "jest": "^25.3.0",
     "jest-extended": "^0.11.5",
+    "prettier": "^1.19.1",
+    "prettier-plugin-svelte": "^0.7.0",
     "rollup": "^2.6.0",
     "rollup-plugin-livereload": "^1.2.0",
     "rollup-plugin-postcss": "^2.5.0",

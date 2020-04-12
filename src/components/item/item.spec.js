@@ -24,7 +24,7 @@ describe('Item', () => {
     const { getByTestId, component } = render(Item, { todo });
 
     let removeId;
-    component.$on('remove', event => removeId = event.detail);
+    component.$on('remove', event => (removeId = event.detail));
 
     fireEvent.click(getByTestId('todo-remove'));
 
