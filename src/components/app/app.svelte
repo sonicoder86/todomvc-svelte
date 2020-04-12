@@ -14,7 +14,7 @@
 
   onMount(() => {
     store.dispatch(onLoad(TodoLocal.loadTodos()));
-    todos.subscribe(todos => TodoLocal.storeTodos(todos));
+    todos.subscribe(todoItems => TodoLocal.storeTodos(todoItems));
   });
 </script>
 

@@ -1,5 +1,5 @@
-import HeaderTest from './header-test.svelte';
 import { render, fireEvent } from '@testing-library/svelte';
+import HeaderTest from './header-test.svelte';
 import { FILTERS } from '../../constants/filter';
 
 describe('Header', () => {

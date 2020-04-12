@@ -1,10 +1,11 @@
 <script>
   import { createEventDispatcher } from 'svelte';
+
   const dispatch = createEventDispatcher();
 
   export let todo;
   let editing = false;
-  let name = todo.name;
+  let { name } = todo;
 
   const handleEdit = () => (editing = true);
 

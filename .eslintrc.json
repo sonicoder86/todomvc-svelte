@@ -1,0 +1,33 @@
+{
+  "plugins": [
+    "svelte3",
+    "prettier"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 2019,
+    "sourceType": "module"
+  },
+  "overrides": [
+    {
+      "files": ["**/*.svelte"],
+      "processor": "svelte3/svelte3"
+    }
+  ],
+  "extends": ["airbnb"],
+  "env": {
+    "browser": true,
+    "jest": true
+  },
+  "rules": {
+    "import/first": 0,
+    "import/prefer-default-export": 0,
+    "no-return-assign": 0,
+    "import/no-extraneous-dependencies": 0,
+    "no-multiple-empty-lines": 0,
+    "import/no-mutable-exports": 0,
+    "object-curly-newline": ["error", { "consistent": true }],
+    "max-len": ["error", { "code": 120 }],
+    "comma-dangle": ["error", "never"],
+    "arrow-parens": ["error", "as-needed"]
+  }
+}

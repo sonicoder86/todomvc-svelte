@@ -5,7 +5,7 @@
 
   const store = getContext('store');
 
-  const completeAll = () => store.dispatch(onCompleteAll(name));
+  const completeAll = () => store.dispatch(onCompleteAll());
 
   const remove = event => store.dispatch(onRemove(event.detail));
 

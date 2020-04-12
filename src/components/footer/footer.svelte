@@ -16,7 +16,7 @@
   const { itemsLeft, completedCount } = store.selectors;
   const itemText = derived(itemsLeft, itemCount => (itemCount === 1 ? 'item' : 'items'));
 
-  const filterSelect = filter => store.dispatch(onFilterSelect(filter));
+  const filterSelect = selectedFilter => store.dispatch(onFilterSelect(selectedFilter));
   const clearCompleted = () => store.dispatch(onClearCompleted());
 </script>
 

@@ -16,23 +16,23 @@ function reduce(reducer, initial) {
 }
 
 export const createStore = (state = { todos: [], filter: FILTERS.all }) => {
-  const todos = reduce(todosReducer, state.todos);
-  const filter = reduce(filterReducer, state.filter);
+  const todosStore = reduce(todosReducer, state.todos);
+  const filterStore = reduce(filterReducer, state.filter);
 
   return {
     state: {
-      todos: todos.state,
-      filter: filter.state
+      todos: todosStore.state,
+      filter: filterStore.state
     },
     dispatch(action) {
-      todos.dispatch(action);
-      filter.dispatch(action);
+      todosStore.dispatch(action);
+      filterStore.dispatch(action);
     },
     selectors: {
-      itemsLeft: derived(todos, todos => selectNotCompleted(todos).length),
-      completedCount: derived(todos, todos => selectCompleted(todos).length),
-      visibleTodos: derived([todos, filter], ([todos, filter]) => selectVisible(todos, filter)),
-      areAllCompleted: derived(todos, todos => todos.length && todos.every(todo => todo.completed))
+      itemsLeft: derived(todosStore, todos => selectNotCompleted(todos).length),
+      completedCount: derived(todosStore, todos => selectCompleted(todos).length),
+      visibleTodos: derived([todosStore, filterStore], ([todos, filter]) => selectVisible(todos, filter)),
+      areAllCompleted: derived(todosStore, todos => todos.length && todos.every(todo => todo.completed))
     }
   };
 };

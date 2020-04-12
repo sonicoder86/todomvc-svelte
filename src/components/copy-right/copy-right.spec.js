@@ -1,5 +1,5 @@
-import CopyRight from './copy-right.svelte';
 import { render } from '@testing-library/svelte';
+import CopyRight from './copy-right.svelte';
 
 describe('CopyRight', () => {
   it('should render component', () => {

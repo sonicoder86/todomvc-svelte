@@ -1,6 +1,8 @@
-import { ACTION_TYPES } from '../../constants/action-type';
 import { v4 as uuidv4 } from 'uuid';
+import { ACTION_TYPES } from '../../constants/action-type';
 import { selectCompleted, selectNotCompleted } from '../selectors/todo';
+
+const areAllCompleted = state => state.length && selectCompleted(state).length === state.length;
 
 export const todosReducer = (state = [], action) => {
   switch (action.type) {
@@ -13,8 +15,7 @@ export const todosReducer = (state = [], action) => {
     case ACTION_TYPES.remove:
       return state.filter(todo => todo.id !== action.id);
     case ACTION_TYPES.completeAll:
-      const areAllCompleted = state.length && selectCompleted(state).length === state.length;
-      return state.map(todo => ({ ...todo, ...{ completed: !areAllCompleted } }));
+      return state.map(todo => ({ ...todo, ...{ completed: !areAllCompleted(state) } }));
     case ACTION_TYPES.clearCompleted:
       return selectNotCompleted(state);
     default:
