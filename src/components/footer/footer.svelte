@@ -28,7 +28,7 @@
   <ul class="filters">
     {#each filterTitles as filterTitle}
       <li>
-        <a href="#" class:selected={filterTitle.key === $filter} on:click={() => filterSelect(filterTitle.key)}>
+        <a href="./#" class:selected={filterTitle.key === $filter} on:click={() => filterSelect(filterTitle.key)}>
           {filterTitle.value}
         </a>
       </li>
