@@ -5,5 +5,8 @@ module.exports = {
   },
   setupFilesAfterEnv: [
     '<rootDir>src/setupTests.js'
+  ],
+  transformIgnorePatterns: [
+    "node_modules/(?!(svelte-routing|svelte-spa-router)/)"
   ]
 };
