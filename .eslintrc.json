@@ -13,7 +13,7 @@
       "processor": "svelte3/svelte3"
     }
   ],
-  "extends": ["airbnb"],
+  "extends": ["airbnb/base"],
   "env": {
     "browser": true,
     "jest": true
