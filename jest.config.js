@@ -7,6 +7,7 @@ module.exports = {
     '<rootDir>src/setupTests.js'
   ],
   transformIgnorePatterns: [
-    "node_modules/(?!(svelte-routing|svelte-spa-router)/)"
-  ]
+    'node_modules/(?!(svelte-routing|svelte-spa-router)/)'
+  ],
+  testEnvironment: 'jsdom'
 };
