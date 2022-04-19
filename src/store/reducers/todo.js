@@ -4,7 +4,7 @@ import { selectCompleted, selectNotCompleted } from '../selectors/todo';
 
 const areAllCompleted = state => state.length && selectCompleted(state).length === state.length;
 
-export const todosReducer = (state = [], action) => {
+export const todosReducer = (state = [], action = '') => {
   switch (action.type) {
     case ACTION_TYPES.load:
       return [...action.todos];
