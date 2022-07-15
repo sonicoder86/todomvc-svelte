@@ -16,7 +16,7 @@
     "cypress": "cypress run"
   },
   "dependencies": {
-    "svelte": "^3.47.0",
+    "svelte": "^3.49.0",
     "todomvc-app-css": "^2.4.2",
     "uuid": "^8.3.2"
   },
